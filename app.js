@@ -25,9 +25,6 @@ const ENTITY_ATTRS=[{key:'power',label:'Power'},{key:'finesse',label:'Finesse'},
 // Content arrays are sorted alphabetically on load unless preserve_order:true.
 const DB={};
 
-// Placeholder text for all search/add inputs (named-list, rated-list, merits, weapons, armor, equipment).
-const ADD_ENTRY_PLACEHOLDER='Add new entry or search';
-
 // STATE — the active character object. Everything on the sheet reads/writes here.
 // Persisted to localStorage as JSON. See patchState() for the full field schema
 // and _baseCharacterFields() for the initial values assigned on character creation.
@@ -1571,7 +1568,7 @@ function buildSectionHTML(sd){
       <div class="sec-collapsible-body">
       <div id="${listId}"></div>
       <div class="add-row">
-        <input id="${sId}" placeholder="${ADD_ENTRY_PLACEHOLDER}" style="flex:1" oninput="filterSelectAndFill('${sId}','${dId}','${descId}',${dbRef})">
+        <input id="${sId}" placeholder="Search or type…" style="flex:1" oninput="filterSelectAndFill('${sId}','${dId}','${descId}',${dbRef})">
         <select id="${dId}" onchange="fillDescFromDrop('${dId}','${descId}',${dbRef})"><option disabled selected value="">— pick —</option></select>
         <button onclick="${addCall}">Add</button>
       </div>
@@ -2015,7 +2012,7 @@ function buildMeritsHTML(sd,hidden){
     <hr style="border:none;border-top:1px solid var(--border-light);margin-bottom:8px">
     <div id="meritList"></div>
     <div class="add-row">
-      <input id="meritSearch" placeholder="${ADD_ENTRY_PLACEHOLDER}" oninput="filterSelect('meritSearch','meritDrop',DB.merits)">
+      <input id="meritSearch" placeholder="Search…" oninput="filterSelect('meritSearch','meritDrop',DB.merits)">
       <select id="meritDrop"><option disabled selected value="">— pick —</option></select>
       <button onclick="addMerit()">Add</button>
     </div>
@@ -2031,7 +2028,7 @@ function buildGenericRatedHTML(sd,hidden){
     <hr style="border:none;border-top:1px solid var(--border-light);margin-bottom:8px">
     <div id="${listId}"></div>
     <div class="add-row">
-      <input id="${sId}" placeholder="${ADD_ENTRY_PLACEHOLDER}" oninput="filterSelect('${sId}','${dId}',${dbRef})">
+      <input id="${sId}" placeholder="Search or type…" oninput="filterSelect('${sId}','${dId}',${dbRef})">
       <select id="${dId}"><option disabled selected value="">— pick —</option></select>
       <button onclick="addGenericRated('${sk}','${sId}','${dId}','${listId}',${max},${dbRef},'${sd.key}')">Add</button>
     </div>
@@ -2043,7 +2040,7 @@ function buildWeaponsHTML(hidden){
     <div class="sec">Weapons</div>
     <div class="sec-collapsible-body"><div id="weaponList"></div>
     <div class="add-row">
-      <input id="weaponSearch" placeholder="${ADD_ENTRY_PLACEHOLDER}" oninput="filterSelect('weaponSearch','weaponDrop',DB.weapons)">
+      <input id="weaponSearch" placeholder="Search…" oninput="filterSelect('weaponSearch','weaponDrop',DB.weapons)">
       <select id="weaponDrop"><option disabled selected value="">— pick —</option></select>
       <button onclick="addWeapon()">Add</button>
     </div>
@@ -2055,7 +2052,7 @@ function buildArmorHTML(hidden){
     <div class="sec">Armor</div>
     <div class="sec-collapsible-body"><div id="armorList"></div>
     <div class="add-row">
-      <input id="armorSearch" placeholder="${ADD_ENTRY_PLACEHOLDER}" oninput="filterSelect('armorSearch','armorDrop',DB.armor)">
+      <input id="armorSearch" placeholder="Search…" oninput="filterSelect('armorSearch','armorDrop',DB.armor)">
       <select id="armorDrop"><option disabled selected value="">— pick —</option></select>
       <button onclick="addArmor()">Add</button>
     </div>
@@ -2067,7 +2064,7 @@ function buildEquipmentHTML(hidden){
     <div class="sec">Equipment</div>
     <div class="sec-collapsible-body"><div id="equipList"></div>
     <div class="add-row">
-      <input id="equipSearch" placeholder="${ADD_ENTRY_PLACEHOLDER}" oninput="filterSelect('equipSearch','equipDrop',DB.equipment)">
+      <input id="equipSearch" placeholder="Search…" oninput="filterSelect('equipSearch','equipDrop',DB.equipment)">
       <select id="equipDrop"><option disabled selected value="">— pick —</option></select>
       <button onclick="addEquip()">Add</button>
     </div>
@@ -4328,100 +4325,22 @@ function _showImportResult(elId,ok,msg){
   // Success messages fade after 6s; errors stay until next interaction
   if(ok)el._hideTimer=setTimeout(()=>{el.className='import-result';el.textContent='';},6000);
 }
-// _loadCharacterFromJSON — shared core for importSheet and _shareLoadFromURL.
-// Parses jsonString, patches state, and renders the sheet. Returns true on
-// success, false on parse failure. Does not show any status messages itself.
-function _loadCharacterFromJSON(jsonString){
-  try{
-    STATE=JSON.parse(jsonString);patchState();currentSaveId=STATE.id||null;
-    showEditor();renderEditor();
-    return true;
-  }catch{
-    return false;
-  }
-}
 function importSheet(input){
   const file=input.files[0];if(!file)return;
   const reader=new FileReader();
   reader.onload=e=>{
-    if(_loadCharacterFromJSON(e.target.result)){
+    try{
+      STATE=JSON.parse(e.target.result);patchState();currentSaveId=STATE.id||null;
+      showEditor();renderEditor();
       showStatus('Sheet imported.');
       _showImportResult('sheetImportResult',true,`✓ "${STATE.name||'Unnamed'}" imported successfully.`);
-    }else{
+    }catch{
       showStatus('Import failed — invalid JSON file.');
       _showImportResult('sheetImportResult',false,'✕ Import failed — not a valid sheet file.');
     }
   };
   reader.readAsText(file);input.value='';
 }
-
-// ── Share Sheet URL ───────────────────────────────────────────────────────────
-// shareSheetURL — compresses STATE to a #share= URL and copies it to clipboard.
-// Also displays the URL inline in #shareUrlResult on the sidebar.
-function shareSheetURL(){
-  if(!STATE.name&&!STATE.id){showStatus('Nothing to share — load or create a sheet first.');return;}
-  if(typeof LZString==='undefined'){showStatus('Share unavailable — compression library failed to load.');return;}
-  const json=JSON.stringify(STATE);
-  const compressed=LZString.compressToEncodedURIComponent(json);
-  const url=window.location.origin+window.location.pathname+'#share='+compressed;
-  // Copy to clipboard
-  navigator.clipboard.writeText(url).then(()=>{
-    showStatus('Share URL copied to clipboard.');
-  }).catch(()=>{
-    showStatus('Share URL generated — see below to copy.');
-  });
-  // Show inline result in sidebar (drawer users see toast only — no result div there)
-  _showImportResult('shareUrlResult',true,'✓ URL copied to clipboard.');
-}
-
-// loadSheetURL — prompts the user for a share URL, decodes and loads the sheet.
-// Shows the warning banner after a successful load since the sheet is not saved.
-function loadSheetURL(){
-  const input=window.prompt('Paste a Mortals+ share URL:');
-  if(!input)return;
-  const match=input.match(/#share=([A-Za-z0-9+/=%-]+)/);
-  if(!match){showStatus('No share data found in that URL.');return;}
-  if(typeof LZString==='undefined'){showStatus('Load unavailable — compression library failed to load.');return;}
-  try{
-    const json=LZString.decompressFromEncodedURIComponent(match[1]);
-    if(!json)throw new Error('Decompression returned empty string');
-    if(_loadCharacterFromJSON(json)){
-      showStatus('Sheet loaded from share URL.');
-      showWarning('Sheet loaded from share link — not saved. Click Save to keep it.');
-    }else{
-      showStatus('Load failed — could not parse sheet data.');
-    }
-  }catch{
-    showStatus('Load failed — invalid or corrupted share URL.');
-  }
-}
-
-// _shareLoadFromURL — called at startup. Detects a #share= fragment in the
-// current URL, decodes it, and loads the sheet without auto-saving.
-// Clears the hash after loading so reloads do not re-trigger the load.
-function _shareLoadFromURL(){
-  const hash=window.location.hash;
-  if(!hash.startsWith('#share='))return;
-  const encoded=hash.slice('#share='.length);
-  if(!encoded)return;
-  if(typeof LZString==='undefined'){
-    showWarning('Share URL detected but compression library failed to load — try refreshing.');
-    return;
-  }
-  try{
-    const json=LZString.decompressFromEncodedURIComponent(encoded);
-    if(!json)throw new Error('Decompression returned empty string');
-    if(_loadCharacterFromJSON(json)){
-      history.replaceState(null,'',window.location.pathname+window.location.search);
-      showWarning('Sheet loaded from share link — not saved. Click Save to keep it.');
-    }else{
-      showStatus('Could not load share URL — invalid sheet data.');
-    }
-  }catch{
-    showStatus('Could not load share URL — invalid or corrupted link.');
-  }
-}
-// ── End Share Sheet URL ───────────────────────────────────────────────────────
 function getDataKeys(){
   return [...new Set(SECTION_DEFS.filter(s=>s.db_key&&s.type!=='forms-block').map(s=>s.db_key))];
 }
@@ -5599,7 +5518,6 @@ function _fssUnsupportedPopup(){
 
 _fssRestoreHandles().then(()=>{
   loadDB().then(()=>{
-    _shareLoadFromURL();
     loadSaves();
     _fssUpdateUI();
     _fssMaybeReconnectPrompt();

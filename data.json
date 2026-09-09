@@ -164,7 +164,6 @@
     "  xp_key:     for beats-xp — STATE key for the experience counter (default: 'experience')",
     "  top_label:   for quinpar-wheel — label for the top value (default: 'Quintessence')",
     "  bottom_label: for quinpar-wheel — label for the bottom value (default: 'Paradox')",
-    "  max:         for quinpar-wheel — total wheel capacity shared by both values (default: 20, minimum enforced: 10)",
     "",
     "Section types:",
     "  attributes      — the 9 core attributes (special renderer)",
@@ -1363,6 +1362,7 @@
       "db_key": "magical_tools",
       "config_category": "Main Splats"
     },
+  
     {
       "_comment": "── Mummy: the Curse ────────────────────────────────────────────────────────"
     },
@@ -1949,6 +1949,454 @@
       "config_category": "Main Splats"
     },
     {
+      "_comment": "── Princess: the Hopeful ─────────────────────────────────────────────────────"
+    },
+    {
+      "key": "mundane-header-fields",
+      "label": "Identity",
+      "group": "princess",
+      "zone": "header",
+      "order": 1,
+      "type": "header-fields",
+      "default": false,
+      "fields": [
+        {
+          "key": "tf-name",
+          "label": "Transformed Name"
+        },
+        {
+          "key": "concept",
+          "label": "Concept"
+        },
+        {
+          "key": "drive",
+          "label": "Drive"
+        },
+        {
+          "key": "dread",
+          "label": "Dread"
+        }
+      ],
+      "config_category": "Main Splats"
+    },
+    {
+      "key": "luminous-beats-xp",
+      "label": "Luminous Beats",
+      "group": "Princess",
+      "zone": "beats",
+      "order": 2,
+      "type": "beats-xp",
+      "default": false,
+      "beats_key": "luminous_beats",
+      "xp_key": "luminous_experience",
+      "config_category": "Main Splats"
+    },
+    {
+      "key": "princess-header-fields",
+      "label": "Princess Identity",
+      "group": "Princess",
+      "zone": "header",
+      "order": 3,
+      "type": "header-fields",
+      "default": false,
+      "fields": [
+        {
+          "key": "princess_calling",
+          "label": "Calling"
+        },
+        {
+          "key": "princess_queen",
+          "label": "Queen"
+        },
+        {
+          "key": "princess_embassy",
+          "label": "Embassy"
+        },
+        {
+          "key": "princess_bonus",
+          "label": "Bonus Affinity"
+        }
+      ],
+      "config_category": "Main Splats"
+    },
+    {
+      "key": "tf-traits",
+      "label": "Transformed Traits",
+      "group": "Princess",
+      "zone": "right-column",
+      "order": 2,
+      "type": "arcana-block",
+      "state_key": "tf-traits",
+      "default": false,
+      "fields": [
+        {
+          "key": "size",
+          "label": "Size"
+        },
+        {
+          "key": "health",
+          "label": "Health"
+        },
+        {
+          "key": "willpower",
+          "label": "Willpower"
+        },
+        {
+          "key": "defense",
+          "label": "Defense"
+        },
+        {
+          "key": "initiative",
+          "label": "Initiative"
+        },
+        {
+          "key": "speed",
+          "label": "Speed"
+        }
+      ],
+      "config_category": "Main Splats"
+    },
+    {
+      "key": "tf-dots",
+      "label": "Transformed Attributes",
+      "group": "Princess",
+      "zone": "full-width-bottom",
+      "order": 13,
+      "type": "arcana-block",
+      "state_key": "tf-dots",
+      "default": false,
+      "fields": [
+        {
+          "key": "intelligence",
+          "label": "Intelligence"
+        },
+        {
+          "key": "wits",
+          "label": "Wits"
+        },
+        {
+          "key": "resolve",
+          "label": "Resolve"
+        },
+        {
+          "key": "strength",
+          "label": "Strength"
+        },
+        {
+          "key": "dexterity",
+          "label": "Dexterity"
+        },
+        {
+          "key": "stamina",
+          "label": "Stamina"
+        },
+        {
+          "key": "presence",
+          "label": "Presence"
+        },
+        {
+          "key": "manipulation",
+          "label": "Manipulation"
+        },
+        {
+          "key": "composure",
+          "label": "Composure"
+        }
+      ],
+      "config_category": "Main Splats"
+    },
+    {
+      "key": "tf-skills",
+      "label": "Transformed Skills",
+      "group": "Princess",
+      "zone": "full-width-bottom",
+      "order": 13,
+      "type": "rated-list",
+      "max_rating": 5,
+      "state_key": "tf-skills",
+      "db_key": "tf_skills",
+      "default": false,
+      "config_category": "Main Splats"
+    },
+    {
+      "key": "anthem",
+      "label": "Anthem",
+      "group": "Princess",
+      "zone": "left-column",
+      "order": 16,
+      "type": "named-list",
+      "state_key": "anthem",
+      "db_key": "anthem_charms",
+      "default": false,
+      "config_category": "Main Splats"
+    },
+    {
+      "key": "buster",
+      "label": "Buster",
+      "group": "Princess",
+      "zone": "left-column",
+      "order": 17,
+      "type": "named-list",
+      "state_key": "buster",
+      "db_key": "buster_charms",
+      "default": false,
+      "config_category": "Main Splats"
+    },
+    {
+      "key": "conjure",
+      "label": "Conjure",
+      "group": "Princess",
+      "zone": "left-column",
+      "order": 18,
+      "type": "named-list",
+      "state_key": "conjure",
+      "db_key": "conjure_charms",
+      "default": false,
+      "config_category": "Main Splats"
+    },
+    {
+      "key": "detect",
+      "label": "Detect",
+      "group": "Princess",
+      "zone": "left-column",
+      "order": 19,
+      "type": "named-list",
+      "state_key": "detect",
+      "db_key": "detect_charms",
+      "default": false,
+      "config_category": "Main Splats"
+    },
+    {
+      "key": "force",
+      "label": "Force",
+      "group": "Princess",
+      "zone": "left-column",
+      "order": 20,
+      "type": "named-list",
+      "state_key": "force",
+      "db_key": "force_charms",
+      "default": false,
+      "config_category": "Main Splats"
+    },
+    {
+      "key": "illusion",
+      "label": "Illusion",
+      "group": "Princess",
+      "zone": "left-column",
+      "order": 21,
+      "type": "named-list",
+      "state_key": "illusion",
+      "db_key": "illusion_charms",
+      "default": false,
+      "config_category": "Main Splats"
+    },
+    {
+      "key": "kiai",
+      "label": "Kiai",
+      "group": "Princess",
+      "zone": "left-column",
+      "order": 22,
+      "type": "named-list",
+      "state_key": "kiai",
+      "db_key": "kiai_charms",
+      "default": false,
+      "config_category": "Main Splats"
+    },
+    {
+      "key": "plea",
+      "label": "Plea",
+      "group": "Princess",
+      "zone": "left-column",
+      "order": 23,
+      "type": "named-list",
+      "state_key": "plea",
+      "db_key": "plea_charms",
+      "default": false,
+      "config_category": "Main Splats"
+    },
+    {
+      "key": "restoration",
+      "label": "Restoration",
+      "group": "Princess",
+      "zone": "left-column",
+      "order": 24,
+      "type": "named-list",
+      "state_key": "restoration",
+      "db_key": "restoration_charms",
+      "default": false,
+      "config_category": "Main Splats"
+    },
+    {
+      "key": "step",
+      "label": "Step",
+      "group": "Princess",
+      "zone": "left-column",
+      "order": 25,
+      "type": "named-list",
+      "state_key": "step",
+      "db_key": "step_charms",
+      "default": false,
+      "config_category": "Main Splats"
+    },
+    {
+      "key": "ward",
+      "label": "ward",
+      "group": "Princess",
+      "zone": "left-column",
+      "order": 26,
+      "type": "named-list",
+      "state_key": "ward",
+      "db_key": "ward_charms",
+      "default": false,
+      "config_category": "Main Splats"
+    },
+    {
+      "key": "signets",
+      "label": "Signets",
+      "group": "Princess",
+      "zone": "full-width-bottom",
+      "order": 15,
+      "type": "arcana-block",
+      "state_key": "signets",
+      "default": false,
+      "fields": [
+        {
+          "key": "acqua",
+          "label": "Acqua"
+        },
+        {
+          "key": "aria",
+          "label": "Aria"
+        },
+        {
+          "key": "fuoco",
+          "label": "Fuoco"
+        },
+        {
+          "key": "legno",
+          "label": "Legno"
+        },
+        {
+          "key": "terra",
+          "label": "Terra"
+        },
+        {
+          "key": "lacrima",
+          "label": "Lacrima"
+        },
+        {
+          "key": "tempesta",
+          "label": "Tempesta"
+        },
+        {
+          "key": "specchio",
+          "label": "Specchio"
+        },
+        {
+          "key": "fulmine",
+          "label": "Fulmine"
+        },
+        {
+          "key": "metallo",
+          "label": "Metallo"
+        },
+        {
+          "key": "vuoto",
+          "label": "Vuoto"
+        }
+      ],
+      "config_category": "Main Splats"
+    },
+    {
+      "key": "signet-gifts",
+      "label": "Signet Gifts",
+      "group": "Princess",
+      "zone": "full-width-bottom",
+      "order": 16,
+      "type": "named-list",
+      "state_key": "signet-gifts",
+      "db_key": "signet_gifts",
+      "default": false,
+      "config_category": "Main Splats"
+    },
+    {
+      "key": "inner_light",
+      "label": "Inner Light",
+      "group": "Princess",
+      "zone": "right-column",
+      "order": 2,
+      "type": "dot-track",
+      "state_key": "inner_light",
+      "default": false,
+      "max": 15,
+      "print_empty": true,
+      "config_category": "Main Splats"
+    },
+    {
+      "key": "shadows",
+      "label": "Shadows",
+      "group": "Princess",
+      "zone": "right-column",
+      "order": 3,
+      "type": "dot-track",
+      "state_key": "shadows",
+      "default": false,
+      "default_value": 0,
+      "max": 5,
+      "print_empty": true,
+      "config_category": "Main Splats"
+    },
+    {
+      "key": "galemarks",
+      "label": "Galemarks",
+      "group": "Princess",
+      "zone": "right-column",
+      "order": 4,
+      "type": "dot-track",
+      "state_key": "galemarks",
+      "default": false,
+      "default_value": 0,
+      "max": 5,
+      "print_empty": true,
+      "config_category": "Main Splats"
+    },
+    {
+      "key": "belief",
+      "label": "Belief",
+      "group": "Princess",
+      "zone": "right-column",
+      "order": 5,
+      "type": "dot-track",
+      "state_key": "belief",
+      "default": false,
+      "max": 10,
+      "default_value": 8,
+      "print_empty": true,
+      "config_category": "Main Splats"
+    },
+    {
+      "key": "wisps",
+      "label": "Wisps",
+      "group": "Princess",
+      "zone": "right-column",
+      "order": 6,
+      "type": "resource-track",
+      "state_key": "wisps",
+      "default": false,
+      "config_category": "Main Splats"
+    },
+    {
+      "key": "oaths",
+      "label": "Oaths",
+      "group": "Princess",
+      "zone": "right-column",
+      "order": 7,
+      "type": "line-list",
+      "state_key": "oaths",
+      "default": false,
+      "config_category": "Main Splats"
+    },
+    {
       "_comment": "── Half-Splats ──────────────────────────────────────────────────────────────"
     },
     {
@@ -2306,7 +2754,6 @@
       "state_key": "quintessence_paradox",
       "top_label": "Quintessence",
       "bottom_label": "Paradox",
-      "max": 20,
       "default": false,
       "config_category": "Other"
     },
@@ -2705,6 +3152,53 @@
       }
     },
     {
+      "name": "Princess",
+      "config": {
+        "beats-xp": true,
+        "luminous-beats-xp": true,
+        "attributes": true,
+        "skills": true,
+        "other-traits": true,
+        "integrity": false,
+        "tilts": true,
+        "conditions": true,
+        "aspirations": true,
+        "merits": true,
+        "weapons": true,
+        "armor": true,
+        "equipment": true,
+        "notes": true,
+        "mortal-header-fields": false,
+        "princess-header-fields": true,
+        "mundane-header-fields": true,
+        "signets": true,
+        "signet-gifts": true,
+        "tf-dots": true,
+        "tf-skills": true,
+        "tf-traits": true,
+        "inner_light": true,
+        "shadows": true,
+        "galemarks": true,
+        "belief": true,
+        "wisps": true,
+        "oaths": true,
+        "anthem": true,
+        "buster": true,
+        "conjure": true,
+        "detect": true,
+        "force": true,
+        "illusion": true,
+        "kiai": true,
+        "plea": true,
+        "restoration": true,
+        "step": true,
+        "ward": true,
+        "general-dice-pools": false,
+        "combat-dice-pools": false
+      },
+      "category": "Main Splats"
+    },
+    {
       "name": "Promethean",
       "config": {
         "beats-xp": true,
@@ -3059,6 +3553,218 @@
       "name": "Ambidextrous",
       "rating": 3,
       "desc": "Available only at character creation. Your character does not suffer the -2 penalty for using his off hand in combat or to perform other actions."
+    }
+  ],
+  "tf_skills": [
+    {
+      "name": "Academics"
+    },
+    {
+      "name": "Computer"
+    },
+    {
+      "name": "Crafts"
+    },
+    {
+      "name": "Investigation"
+    },
+    {
+      "name": "Medicine"
+    },
+    {
+      "name": "Occult"
+    },
+    {
+      "name": "Politics"
+    },
+    {
+      "name": "Science"
+    },
+    {
+      "name": "Athletics"
+    },
+    {
+      "name": "Brawl"
+    },
+    {
+      "name": "Drive"
+    },
+    {
+      "name": "Firearms"
+    },
+    {
+      "name": "Larceny"
+    },
+    {
+      "name": "Stealth"
+    },
+    {
+      "name": "Survival"
+    },
+    {
+      "name": "Weaponry"
+    },
+    {
+      "name": "Animal Ken"
+    },
+    {
+      "name": "Empathy"
+    },
+    {
+      "name": "Expression"
+    },
+    {
+      "name": "Intimidation"
+    },
+    {
+      "name": "Persuasion"
+    },
+    {
+      "name": "Socialize"
+    },
+    {
+      "name": "Streetwise"
+    },
+    {
+      "name": "Subterfuge"
+    }
+  ],
+  "anthem_charms":[
+    {
+      "name": "Anthem",
+      "desc": "***BASIC ACTION***\n**Action**: Instant\n**Dice Pool**: Presence + Expression + Inner Light--target's Composure (if resisted).\n**Duration**: Special. Anthem lasts for at least two turns, plus one additional turn for each charge spent on its duration. The caster can spend an instant action at any point later in the scene to continue their performance and 'refresh' Anthem, starting it up again without spending additional resources or rolling again.\n**Scaling**: The number of successes determines the difficulty to resist the Anthem and its ability to counteract other sonic, performance, or emotional effects.\n**Exceptional Success**: Increase the number of *charges* by 2.\n**Basic Action**: The Princess delivers a *performance* to an *audience*, which evokes a *feeling* and applies the Stirring Performance Tilt\n-A *performance* is 'an act of self-expression through some manner of live artistic communication.'\n-The *audience* is 'everyone who can directly experience the *performance* out to a distance of roughly 20 yards.'\n-The *feeling* is 'an emotion of your choice, evoked in the *audience*, that can encourage certain actions and discourage others.'\nWhen you cast Anthem, you gain a number of *charges* equal to your Inner Light. Each *charge* you spend on the basic action increases the duration before you need to resume your *performance* by 1 turn. These *charges* can also be expended to enhance many Upgrades. While Anthem is active, your performance continues without you taking actions, maybe without you even visibly creating it: it can become the 'background music' or the atmospheric groove that just plays in the environment.\nThe Stirring Performance Tilt (**p. 271**) is keyed to the *feeling* the Anthem applied. While Anthem is active, Stirring Performance grants +2 to all dice pools that are taken in line with the Anthem’s *feeling*.\nNobody can benefit from the Stirring Performance of more than one character at a time (but multiple Princesses can cast it as a teamwork action to boost the main performer). The caster is *not* part of their own *audience* unless another ability says they are. Anthem conflicts with other Anthems as well as similar musical or sonic effects like a Sin-Eater's Dirge or mass emotional manipulation abilities, at the discretion of the Storyteller. When Anthem causes a Clash of Wills, add the successes from the Anthem spell or the other effect to the dice pool for the Clash of Wills as if it was a cooperation roll. Rocking harder will always make your spell more powerful.\n**Invocation**: The act of performing and communicating through your performance is considered the Invocation for this Charm; you don't need to shout something special in addition to that.\n**Regalia**: Anthem Regalia is all instruments of performance. Usually, this is a musical instrument of some kind--a flute, a lyre, an ocarina, a steel drum, a BC Rich Warlock electric guitar, a magical cordless microphone, a chakram tambourine, a piano synthesizer or set of DJ turntables that hover in front of their user. For other forms of performance, Regalia is something used to do the performance, or something that augments it: tap dancing shoes could be Regalia, but so could the decorated dreadlocks that whirl and whip with the movement of a capoeira dancer. Spotlights might hover in the air to cast their light on the performer when she's ready for her solo."
+    },
+    {
+      "name": "Bassline Anthem",
+      "desc": "Gifted to Princesses of Flowers--allows Composure to be used instead of Presence\n\n*'I'm gonna fight 'em off. A seven nation army couldn't hold me back.'*\n\nYou may expend *charges* to enhance the dice bonus conferred by your Stirring Performance Tilt. One *charge* enhances it to a +3 bonus, three *charges* enhance it to a +4 bonus, and six *charges* enhance it to a +5 bonus."
+    },
+    {
+      "name": "Breakup Anthem",
+      "desc": "*'I don't wanna be a fool for you/in this game for two/so I'm leaving you behind!'*\n\nYour Anthem can reflexively trigger a Clash of Wills against someone using a supernatural ability on or in your *audience,* even if it doesn't directly oppose the Anthem. If you win the Clash, the opposing spell or ability fizzles out, unable to throw off the groove. This only works once per scene, plus one additional time for each *charge* spent, and you must spend a Wisp each time it triggers."
+    },
+    {
+      "name": "Face-Melting Anthem",
+      "desc": "Gifted to Princesses of Storms--allows Dexterity to be used instead of Presence\n\n*'Do ya wanna, do ya wanna dance--with a JAWBREAKER!?'*\n\nEach time anyone in the *audience* acts against the *feeling* you inspire, they make a Resolve + Composure roll contested against this Charm. On a failure, they immediately take 2 Bashing damage, plus one more for each *charge* spent."
+    },
+    {
+      "name": "Glamorous Anthem",
+      "desc": "Gifted to Princesses of Mirrors--allows Manipulation to be used instead of Presence\n\n*'Watch out for my medallion, my diamonds are reckless/It feels like a midget is hangin' from my necklace!'*\n\nThe overwhelming charisma and sparkle of your *performance* is hard to deny: anyone in the *audience* with Composure less than your activation successes has a -2 dice penalty to all actions that run counter to your *feeling*, plus an additional -1 for each *charge* spent."
+    },
+    {
+      "name": "Harmonized Anthem",
+      "desc": "*'If you're ever in trouble, I'll be there on the double, just send for me oh baby!'*\n\nYour Anthem applies two different Stirring Performance Tilts simultaneously. They must be distinct *feelings*, but any bonuses and penalties from them stack so long as an action fulfills / runs counter to both of them.\nWhen you do this, the same Upgrades apply to each Stirring Performance, but you divvy up the *charges* separately."
+    },
+    {
+      "name": "Heart-Rending Anthem",
+      "desc": "Gifted to Princesses of Tears--allows Wits to be used instead of Presence\n\n*'Feels like pins and needles in my heart, so long I can feel it tearing me apart...'*\n\nAnyone in the *audience* acting against the *feeling* you inspire requires a Resolve + Composure roll contested against this Charm. On a failure, the action costs a Willpower. This can only drain one Willpower per scene, plus an additional Willpower for each *charge* spent."
+    },
+    {
+      "name": "Inspirational Anthem",
+      "desc": "Gifted to Princesses of Jewels--allows Composure to be used instead of Presence\n\n*'We are the champions, my friend... And we'll keep on fighting 'til the end...'*\n\nYour Stirring Performance Tilt now also applies a variant of the Inspired Condition: once per scene, when taking an action in line with your *feeling*, the *audience* may reduce the number of Successes required for an Exceptional Success by one, plus one more for each *charge* spent. If they get that Exceptional Success, they regain 1 Willpower.\nUsing this Upgrade costs 1 Willpower. A given character can only gain this Willpower once per chapter per performer; if you have multiple Princesses who perform for each other to restore communal Willpower that's not 'an exploit' that's 'forming a band.'"
+    },
+    {
+      "name": "Instructional Anthem",
+      "desc": "Gifted to Princesses of Currents--allows Intelligence to be used instead of Presence\n\n*'You've gotta do the cooking by the book. You know you can't be lazy!'*\n\nChoose up to 2 *audience* members, plus one more for each *charge* spent. Pick a Skill that one of them has, or that you have. While affected by Stirring Performance, every chosen *audience* member has that Skill exactly as the original character has it, including Skill dots, specialties, and relevant Merits."
+    },
+    {
+      "name": "Jumpin' Jack Anthem",
+      "desc": "*'I was booorn in a crossfire hurricane! And I hooowled at my Ma in the drivin' rain! But it's all right now, in fact it's a gas!'*\n\nChannel the power of your *audience's* blazing spirit, lead a performance that crackles with the brilliant power of the Light of Hope. Any time an *audience* member willingly spends a Willpower, or scores an Exceptional Success on a roll to support the performance (dance, sing along, calland-response, chime in, provide setups to punchlines, clap and stamp their feet, etc.), you gain a Wisp and may give that Wisp to any other *audience* member that can use it."
+    },
+    {
+      "name": "Liberating Anthem",
+      "desc": "Gifted to Princesses of Spades--allows Dexterity to be used instead of Presence\n\n*'Back off your riles, back off your jive! 'Cause I'm sick of not living to stay alive!'*\n\nAny *audience* member currently under a mental or psychological Tilt may make an appropriate roll to throw it off. For each *charge* spent, they may try this roll again on a subsequent turn."
+    },
+    {
+      "name": "Lingering Anthem",
+      "desc": "*'Thanks, you've been a lovely audience, we're out!'*\n\nThe basic effect of Stirring Performance--+2 to die rolls in line with the *feeling*--persists for the rest of the scene. None of the other effects that you spent *charges* on persist."
+    },
+    {
+      "name": "Recorded Anthem",
+      "desc": "*'Put another dime in the jukebox, baby.'*\n\nYour *performance* can be captured in some form that the *audience* can access later. The *performance* will only apply the effect of Anthem once; after that, the *performance* may be stirring but it won't apply a Tilt.\nThis means you can make a musical or oratory *performance* through a record of your sound and voice. It also means you can make your *performance* in the form of any other art that can convey your emotions and doesn't require you to be there to perform it: a sculpture, a written poem, even a loaf of bread baked with absolute care and passion."
+    },
+    {
+      "name": "Romantic Anthem",
+      "desc": "Gifted to Princesses of Swords--allows Intelligence to be used instead of Presence\n\n*'I can't see me lovin' nobody but you, for all my life...'*\n\nEveryone under your Stirring Performance Tilt is considered to have an Impression for Social Maneuvering one stage better than it would otherwise be, and a similar positive predisposition for non-Maneuvering purposes."
+    },
+    {
+      "name": "Secret Anthem",
+      "desc": "*'This one goes out to a very special someone in the audience right now.'*\n\nYour *audience* includes only those people you choose, not everyone who can perceive the *performance*."
+    },
+    {
+      "name": "Thrilling Anthem",
+      "desc": "*'Girl, I can thrill you more than any ghoul can ever dare try!'*\n\nYou can lead your *audience* in specific actions--anyone under the effect of your Stirring Performance who doesn't resist can use their turn to mimic your actions exactly. The *audience* will use your Skills and Attributes to make rolls this way, but they can't do supernatural things they don't otherwise have the ability for. \nIf you apply this Upgrade, it costs **two** *charges* for each turn to extend your Stirring Performance."
+    },
+    {
+      "name": "Window-Rattling Anthem",
+      "desc": "*'Are you ready to rock? Because I'm gonna blow your hair to the BACK OF THIS AUDITORIUM!'*\n\nYour Anthem affects a large enough area to make an *audience* of everyone in a stadium's worth of space, all the way up to the cheap seats."
+    },
+    {
+      "name": "Max Volume Anthem",
+      "desc": "*'These go to eleven.'*\n\nThis is an advanced Upgrade. It counts as two Upgrades when applied to a Charm.\n\nYour Anthem overflows with power. You gain double the *charges* for enhancing your Anthem Upgrades, and each Upgrade gets the effect of one *charge* for free."
+    },
+    {
+      "name": "Tribute Anthem",
+      "desc": "*'This is not the greatest song in the world, no. This is just a tribute.'*\n\nThis is an advanced Upgrade. It counts as two Upgrades when applied to a Charm.\n\nYou can mimic and repeat an Instant action performed by an *audience* member under your Stirring Performance Tilt, so long as it's something you understand how to do; you *do not have to have a power or Merit you'd otherwise need.* Use the casting roll for Anthem to resolve this action instead of the normal dice pool, but you can't get more successes than the action you mimic."
+    }
+  ],
+  "buster_charms":[
+    {
+      "name": "Buster",
+      "desc": "*'HERE I GO! This hand of mine is burning red! Its loud roar tells me to grasp victory! ERUPTING... BURNING... FINGER!'*\n\n***BASIC ACTION***\n**Action**: Instant\n**Dice Pool**: Inner Light + Buster Overcharge\n**Duration**: Instant\n**Scaling**: Determines the damage of the attack.\n**Exceptional Success**: More successes are their own reward.\n**Basic Action**: You accumulate Buster Overcharge dice when you spend Wisps. When you cast Buster, you gather and discharge your fighting spirit and will into a devastating, vivid blast of energy at a single target.\nThis Charm is a ranged attack. Any penalties or bonuses that apply to ranged attacks, including but not limited to aiming, cover, and concealment, apply to this Charm's activation roll. Buster's attack range is Short (up to about 30 meters), and there are no penalties for firing at Close or melee range if you don't use a Regalia Weapon for it; Regalia Weapons that have penalties at this range will apply the penalty to the Buster as well. A Princess may choose to deal bashing or lethal damage with her Buster each time she casts it.\n**Special**: A Princess's Buster accumulated power over time; just as her Willpower filters into her Wisps as her resolve purifies, the Wisps she expends on her own magic rise to the surface of her fighting spirit, ready to surge outward in the form of pure power. Every time a Princess spends a Wisp on anything other than casting Buster, she gets two Buster Overcharge dice. When she casts Buster, she can consume any number of her Buster Overcharge dice to add to the activation roll. If not spent, Buster Overcharge dice are lost at the end of a chapter\n**Invocation**: Buster must always be shouted out and declared as loud as you god damn can. Time will appear to stop as you call out the name, do the moves, and display the light show\n**Regalia**: Buster Regalia is impossible to ignore. It might be a magic wand or an unfolding vector cannon. It might be a regal scepter or a toy raygun. A whirling set of ribbons that bind together into an elegant spiral pattern or a spiked, sparking cybernetic arm cannon. Whatever it is, it's going to appear *vivid,* attention-grabbing, and anyone who looks at it will know it's Serious Business. The only thing they have in common is that they are something you can point at your enemy while you shout out everything your attack comes from and everyone it protects. All Buster Regalia are ranged weapons with the 'Buster' tag; the Buster inherits properties from the weapon except for Burst and Autofire."
+    },
+    {
+      "name": "BOTTOMLESS INFINITY BUSTER!",
+      "desc": "When you cast buster, don't roll for it or consume your Buster Overcharge dice yet. Your Buster fires off on your *next* turn, taking your movement and action. If you took damage from a melee attack in the intervening time, the Buster fails. Otherwise, resolved the dice pool then, using your target's current cover, concealment, range, etc, and allowing them to apply their Defense--but **double** your dice pool before subtracting any penalties.\nThis Upgrade can be applied multiple times, and each time you do, increase the number of turns you can charge it by 1, and each turn you charge it adds your base dice pool to the activation roll again."
+    },
+    {
+      "name": "ECHO BURST BUSTER!",
+      "desc": "When you cast Buster, roll all your Buster Overcharge dice separately from the rest. (Penalties are subtracted from your normal dice first, not your Overcharge dice.) Any die that doesn’t result in a success isn’t consumed and can be rolled on your next Buster attack."
+    },
+    {
+      "name": "EVERLASTING DEVASTATION BUSTER!",
+      "desc": "Your Buster damage repeats against anyone and anything it strikes. Each subsequent turn, the target must succeed on a reflexive (Resolve or Stamina) + Potency roll, penalized by the activation successes of the Buster hit, or take the Buster attack’s weapon damage again. This roll gets a stacking +2 bonus each round after the first."
+    },
+    {
+      "name": "GIGADRIVE EXCEED BUSTER!",
+      "desc": "Gifted to all Princesses, regardless of Queen\n\nThis is the basic Buster ability, and everyone starts with it for good reason: it’s pretty much always useful. Gigadrive Exceed can be applied to a Buster multiple times, and each time you do, it increases the Buster’s dice pool by +2. The bonus dice given by Gigadrive Exceed can’t exceed the normal number of Buster Overcharge dice you rolled."
+    },
+    {
+      "name": "PETADRIVE ANNIHILATION BUSTER!",
+      "desc": "Gigadrive Exceed's angry older sister who's been sent to juvie multiple times. Petadrive Annihilation Buster grants +4 dice to your Buster, it can be applied multiple times, AND it isn’t restricted by how many Buster Overcharge dice you have.\nIt has two drawbacks: One, you cannot use free Upgrades to apply Petadrive Annihilation—every application costs a Wisp. Second, you must spend every single Buster Overcharge die you have on it, which must be at least four."
+    },
+    {
+      "name": "PINPOINT SNIPER BUSTER!",
+      "desc": "The range of your Buster extends to Long (up to roughly 300 meters). You also hit with pinpoint accuracy, reducing penalties for distance, called shots, and tiny targets by your Inner Light."
+    },
+    {
+      "name": "RELENTLESS HOMING BUSTER!",
+      "desc": "Your Buster can go around corners and over obstacles. You still have to know where your target is to within 2 meters—a spotter is very helpful—and they can still attempt to get out of the way of the attack when it’s coming, but you ignore line-of-sight, cover, and the target’s Defense if they have an effect that lets them apply it to ranged attacks."
+    },
+    {
+      "name": "UPHEAVAL SLAM BUSTER!",
+      "desc": "Choose an environmental Tilt (subject to Storyteller approval) when you gain this Upgrade. Anyone hit by your Buster is subject to that Tilt until they somehow escape from it. Most often used for Tilts that affect movement and visibility (like a blizzard or uneven terrain due to lush overgrowth)."
+    },
+    {
+      "name": "WITHERING DEMONBANE BUSTER!",
+      "desc": "You empower your Buster with occult magic and apply the supernatural Bane or Ban properties of one other kind of event or material to it, causing the Buster to serve as that Bane or Ban. Pick one kind of Bane when you buy this Upgrade that you may always apply (standards like sunlight, fire, silver, salt, jade, tungsten, etc). When you come into contact with the source of another type of Bane or Ban, you can apply it to your Buster once in the next 24 hours (if you have the source on you, of course, you can just apply it again immediately and reflexively)."
+    },
+    {
+      "name": "CLEANSING DAYLIGHT BUSTER!",
+      "desc": "This is an advanced Upgrade. It counts as two Upgrades when applied to a Charm.\n\nThe blistering, radiant energy of your Buster sears away magical effects in its path. When targeted at someone who has active magical effects that can be subject to a Clash of Wills, this Buster forces a Clash against one of them (either one of your choice, or one at random if you don’t know.)\nYour successes on the Clash of Wills can’t exceed the successes you rolled for Buster. If you succeed, the magical effect is suppressed for the scene."
+    },
+    {
+      "name": "HYPER-EXPLOSIVE BUSTER!",
+      "desc": "This is an advanced Upgrade. It counts as two Upgrades when applied to a Charm.\n\nYour Buster is now an explosive (**CofD: Hurt Locker, p.134**). The damage bonus of your Buster Regalia is the base damage of the explosion, and resolve your Buster roll as the Force of the explosion. There is no ground zero to this explosion, but the primary blast area is equal to four times your Inner Light in meters.\nIf you apply this Upgrade, you only roll half of the Buster Overcharge dice you spend, rounded up. The other half are lost, diffused out over the blast area."
+    },
+    {
+      "name": "JUDGEMENT LIGHT BUSTER!",
+      "desc": "This is an advanced Upgrade. It counts as two Upgrades when applied to a Charm.\n\nWhen your Buster targets any being with a Potency Trait, roll additional dice equal to that Trait. This can’t provide more dice than the total number of Buster Overcharge dice you spent. (The same Overcharge can be “counted” for Judgment Light and Gigadrive Exceed, so between the two Upgrades they can add two dice for each Overcharge you spend.)"
+    }
+  ],
+  "conjure_charms":[
+    {
+      "name": "Conjure",
+      "desc": "***BASIC ACTION***\n**Action**: Extended. Each roll is one turn. No matter how many rolls you make for a single casting of Conjure, it only takes one Wisp.\n**Dice Pool**: Manipulation + Science + Inner Light.\n**Duration**: One scene.\n**Scaling**: Successes determine the Size of the thing you can *summon*.\n**Exceptional Success**: You complete the summoning so quickly that the action was reflexive and you can still act this turn.\n**Basic Action**: At some time before using Conjure, you must *attune* to an *object* or an *actor* at no cost (you can *attune* to any number of things, but it gets hard to keep track of more than 3 times your current Inner Light worth of things). When you cast Conjure, you start to *summon* that *object* or *actor* from its point of origin. You must accumulate a number of successes on the extended casting roll to equal the *object* or *actor*'s Size. If you summon something of Size 0, you treat it as summoning something of Size 1.\n-You *attune* to something by 'being familiar with and having spent a significant amount of time in its presence and specially marking it in some way.'\n-To *summon* is to 'magically transport an *object* or *actor* from wherever it currently is to a spot directly in front of you.'\n-An *object* is 'a piece of equipment that falls in the 'physical object' category (**CofD, p 100**).' Without the Upgrade to do so, you can't *summon* 'mystical equipment;' the magic aura of being *summoned* messes with the mystical qualities in some way. You can't *summon* an object that someone else is using or otherwise attending to.\n-An *actor* is 'your Shikigami.' If you take any combat actions, the stress will cause the link to shatter and the *actor* will return to its point of origin. You can't summon an *actor* who doesn't agree to be summoned, and can send a short message to any *actor* you attempt to summon explaining why they should accept.\nThe *object* or *actor* is ready to use on the turn after it is *summoned*. You can only have one *actor* summoned at a time, but any number of *objects*. The *object* or *actor* will return to its point of origin at the end of the scene unless it was destroyed or consumed. For example, if you *summon* some food and eat it, you won't have the energy sucked out of your body, but the bowl it came in would return to wherever it came from.\n**Invocation**: Conjure must be Invoked by shouting or declaring a call to what you are summoning, what literal or metaphorical thing you take it from, or how you summon it.\n**Regalia**: Conjure Regalia usually takes the form of something that the conjured thing will pass through (even without Conjure Portal), a representation of the thing you summon, or some manifestation of how a conjured thing is tied to you. A ring might expand to the diameter of a hula hoop for a box of supplies to fall through, or a magician's hat might produce a stream of rabbits. Little plastic miniatures or a quickly folded origami vehicle might grow into the form of the real thing. Something could be called over with puppet string, or a fishing pole and line."
     }
   ],
   "weapons": [
@@ -3464,6 +4170,34 @@
       "name": "Chain Rage",
       "rating": 1,
       "desc": "**Wolf Rite**\n**Symbols**: Rage, calm, binding, dawn\n**Sample Rite**: Certain northerly Scandinavian packs work themselves into a frothing fury udner the light of the new day's sun, scream their anger into etched jars and rend their own flesh until exhausted. Then they hurl themselves into frigid water. (Stamina + Survival).\n**Action**: Extended (10 successes, each roll represents 1 minute\nDuration: 1 month\n**Success**: Ritual affects all Uratha who take part. It binds a container or focus to each participant, such as a bottle or piece of chain. As long as the Uratha keeps the focus about her person, then achieving five turns of lucidity during a period of Wasu-Im (not continuous) immediately ends the rage. At the end of the month, or should the focus be broken or taken, the Uratha immediately enters Wasu-Im."
+    }
+  ],
+    "princess_forms": [
+    {
+      "name": "Mundane",
+      "subtitle": "Human",
+      "attr_mods": {},
+      "size_mod": 0,
+      "armor": 0,
+      "perception_bonus": 0,
+      "special_traits": [
+        "Dual Identity"
+      ]
+    },
+    {
+      "name": "Noble",
+      "subtitle": "Transformed",
+      "attr_mods": {
+        "strength": 0,
+        "dexterity": 0,
+        "stamina":0
+      },
+      "size_mod": 0,
+      "armor": 0,
+      "perception_bonus": 0,
+      "special_traits": [
+        "Transformed"
+      ]
     }
   ],
   "werewolf_forms": [
@@ -3991,7 +4725,7 @@
   "help_sections": [
     {
       "title": "Getting Started",
-      "content": "Welcome to Mortals+, the Chronicles of Darkness character builder!\n\nClick **Generate Mortal** for a randomised mortal character, or **Generate Blank Mortal** to start from scratch with an empty sheet.\n\nFor spirits, ghosts, and other supernatural beings, use **Generate Ephemeral Entity** or **Generate Blank Entity**. Select a Rank first to set the entity's power level.\n\nOnce a sheet is open, fill in your character's name and identity fields at the top. All fields save automatically to your browser.\n\nIn order to add new entries (Merits, Equipment, etc), type the name of the entry and click the **Add** button. Use the **Pick** button to select from existing entries in the data library, then click the **Add** button.\n\nWhen you're ready to run a scene, use **⚔ Storyteller Mode** in the sidebar to open the live scene workspace."
+      "content": "Welcome to Mortals+, the Chronicles of Darkness character builder!\n\nClick **Generate Mortal** for a randomised mortal character, or **Generate Blank Mortal** to start from scratch with an empty sheet.\n\nFor spirits, ghosts, and other supernatural beings, use **Generate Ephemeral Entity** or **Generate Blank Entity**. Select a Rank first to set the entity's power level.\n\nOnce a sheet is open, fill in your character's name and identity fields at the top. All fields save automatically to your browser.\n\nWhen you're ready to run a scene, use **⚔ Storyteller Mode** in the sidebar to open the live scene workspace."
     },
     {
       "title": "Saving, Folders & Tags",

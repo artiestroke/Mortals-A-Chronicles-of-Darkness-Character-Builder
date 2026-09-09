@@ -1,0 +1,452 @@
+{
+  "tilts": [
+    {
+      "name": "Arm Wrack",
+      "desc": "One of the character's arms is damaged and unusable. They cannot use two-handed weapons or take actions requiring both arms. Any action suffers a -2 offhand penalty if taken with the offhand. Ended when the injury is healed."
+    },
+    {
+      "name": "Beaten Down",
+      "desc": "The player must spend a point of Willpower each time he wants the character to take a violent action. Ends when the character surrenders."
+    }
+  ],
+  "conditions": [
+    {
+      "name": "Blind",
+      "desc": "Any rolls requiring sight may only use a chance die. If another sense can be reasonably substituted, make the roll at -3 instead."
+    },
+    {
+      "name": "Inspired",
+      "desc": "When your character takes an action pertaining to that inspiration, you may resolve this Condition. Gain a Willpower point, and consider the roll an Exceptional Success on three successes, instead of five"
+    }
+  ],
+  "merits": [
+    {
+      "name": "Area of Expertise",
+      "rating": 2,
+      "desc": "Requires 2 Resolve and 1 Skill Specialty. Choose a Specialty to assign to this Merit. Forgo the +1 bonus afforded by a Specialty, in exchange for a +2."
+    },
+    {
+      "name": "Ambidextrous",
+      "rating": 3,
+      "desc": "Available only at character creation. Your character does not suffer the -2 penalty for using his off hand in combat or to perform other actions."
+    }
+  ],
+  "weapons": [
+    {
+      "name": "Knife",
+      "weapon_type": "melee",
+      "damage": 0,
+      "initiative_mod": -1,
+      "strength_req": 1,
+      "size": 1,
+      "availability": 1,
+      "notes": ""
+    },
+    {
+      "name": "Pistol, Light",
+      "weapon_type": "ranged",
+      "damage": 1,
+      "initiative_mod": 0,
+      "strength_req": 2,
+      "size": 1,
+      "availability": 3,
+      "ranges": "20/40/80",
+      "clip": 17,
+      "notes": ""
+    }
+  ],
+  "armor": [
+    {
+      "name": "Reinforced Clothing",
+      "armor_general": 1,
+      "armor_ballistic": 0,
+      "defense_penalty": 0,
+      "strength_req": 1,
+      "availability": 1,
+      "notes": "This armor is concealed. Covers torso, arms, and legs.",
+      "coverage": {
+        "head": false,
+        "torso": true,
+        "arms": true,
+        "legs": true
+      }
+    },
+    {
+      "name": "Plate",
+      "armor_general": 4,
+      "armor_ballistic": 2,
+      "defense_penalty": -2,
+      "speed_penalty": -3,
+      "strength_req": 3,
+      "availability": 4,
+      "notes": "Covers torso, arms, and legs.",
+      "coverage": {
+        "head": false,
+        "torso": true,
+        "arms": true,
+        "legs": true
+      }
+    }
+  ],
+  "equipment": [
+    {
+      "name": "Flashlight",
+      "dice_bonus": 1,
+      "durability": 2,
+      "size": 1,
+      "structure": 3,
+      "availability": 1,
+      "desc": "Die bonus subtracts from any penalties due to darkness, and adds to any rolls to search in the dark. Some can also be used as a club. Also can blind a subject. Roll Dexterity + Athletics, subtracting opponent's Defense. The victim’s player. If your character scores more successes than the subject, the subject is blinded for one turn. Victims with especially acute senses are blinded for two turns."
+    },
+    {
+      "name": "Smartphone",
+      "dice_bonus": 1,
+      "durability": 2,
+      "size": 1,
+      "structure": 1,
+      "availability": 1,
+      "desc": "Increases dice bonus to +2 if bought at Availability 3. A smartphone with camera, GPS, and internet access. Battery lasts approximately one day of moderate use."
+    }
+  ],
+  "atavisms": [
+    {
+      "name": "Example Atavism",
+      "desc": "Add atavism entries here. Fields: name, desc."
+    }
+  ],
+  "nightmares": [
+    {
+      "name": "Example Nightmare",
+      "desc": "Add nightmare entries here. Fields: name, desc."
+    }
+  ],
+  "contracts": [
+    {
+      "name": "Cloak of Night (Common)",
+      "desc": "**Regalia:** Shield \n**Cost**: 1 Glamour\n**Dice Pool**: None\n**Action**: Instant\nEffects: Must be invoked where vision roll penalties are applied. Affects a number of willing companions equal to dots in Dexterity. Stealth rolls gain a bonus of half the character's Wyrd rating and hide all affected characters as long as they don't draw attention to themselves.\n**Darkling**: The Darkling and her companions retain the benefits of this Contract even if they attract attention to themselves.\n**Ogre**: The Ogre may substitute Stamina for Dexterity for hiding companions.\n**Loophole**: The changeling and her companions don black articles of clothing that mark them as sneaks and rogues."
+    },
+    {
+      "name": "Boon of the Scuttling Spider (Common)",
+      "desc": "**Cost**: 1 Glamour.\n**Dice Pool**: None\n**Action**: Instant.\n**Effects**: Character can move along walls, ceilings, or slick surfaces at normal Speed.\n**Beast**: May use the restrain in a grapple as though he had rolled an exceptional success.\n**Darkling**: Gain a two-die bonus to stealth while scuttling across impossible surfaces.\n**Loophole**: Changeling swallows a live spider."
+    }
+  ],
+  "pledges": [
+    {
+      "name": "Example Pledge",
+      "desc": "Add pledge entries here. Fields: name, desc."
+    }
+  ],
+  "demonic_form": [
+    {
+      "name": "Armored Plates",
+      "desc": "**Modification**\n**System**: Armor provides full coverage with a 3/2 rating and a -1 Defense and Speed penalty."
+    },
+    {
+      "name": "Environmental Resistance",
+      "desc": "**Technology**\n**System**: The demon is immune to the adverse effects from all Environmental Tilts."
+    },
+    {
+      "name": "Wings",
+      "desc": "**Propulsion**\n**System**: The demon is capable of flight and has a species factor of 10 to his Speed while flying."
+    }
+  ],
+  "embeds": [
+    {
+      "name": "Alibi",
+      "desc": "**Mundane**\n**Dice Pool**: Manipulation + Stealth\n**Action**: Instant\n**Dramatic Failure**: The demon's Cover appears but not anywhere useful for an alibi. The demon has no idea where it appeared or what the consequences will be.\n**Failure**: No effect. Cannot be used again for the target scene.\n**Success**: The demon separates himself from his Cover for a scene. The cover is able to make small talk but not make dice rolls or take significant action. If the cover dies, the demon drops to Cover 0 unless he has another Cover to shift to or pact to call in. During this scene the demon can take any actions he wishes without fear his deeds will be traced back to his cover. As such, during that scene the demon cannot be compromised by taking actions antithetical to that Cover. Exploits and demonic form powers still compromise normally.\n**Exceptional Success**: As above, but the cover possesses more self-awareness. If threatened, it leaves the area and vanishes when out of sight."
+    },
+    {
+      "name": "Common Misconception",
+      "desc": "**Vocal**\n**Dice Pool**: Manipulation + Science\n**Action**: Reflexive\n**Dramatic Failure**: The information that the demon produces strengthens the target's argument. Add the demon's Primum to the target's Skill roll. The demon gains the Discredited Condition (-3 on all attempts to convince any witnesses to this exchange of anything for the rest of the scene). The demon can resolve this Condition by succeeding on a roll using the same Skill that the target was using, but achieving more successes than the target did.\n**Failure**: No effect; the target's roll is unaffected.\n**Success**: The \"fact\" that the demon produces undermines the target's ability. Apply a penalty equal to the Embed successes or the demon's Primum (whichever is higher) to the target's Skill roll.\n**Exceptional Success**: The target fails the Skill roll outright and loses a point of Willpower."
+    },
+    {
+      "name": "Ambush",
+      "desc": "**Instrumental**\n**Dice Pool**: Wits + Stealth\n**Action**: Instant\n**Dramatic Failure**: The demon prepares for the ambush, but has missed some critical detail. When the target arrives, the demon is surprised and any allies that were planning to benefit from this Embed must roll to see if they are surprised.\n**Failure**: No effect. The demon and her allies must roll for initiative normally.\n**Success**: The demon positions herself (and, if she wishes, allies up to her Primum rating) such that when their enemy enters the area, the enemy is automatically surprised. The enemy cannot act during the first turn of combat.\n**Exceptional Success**: As above, except the demon can cover as many allies as she wishes with this Embed's effects."
+    }
+  ],
+  "exploits": [
+    {
+      "name": "Affliction",
+      "desc": "**Example Prerequisites**: Deafen, Recurring Hallucinations\n**Dice Pool**: Strength + Medicine + Primum vs Stamina or Resolve + Supernatural Tolerance.\n**Action**: Instant\n**Cost**: 1 Aether\n**Dramatic Failure**: The demon suffers the effects of the Affliction herself. Any Condition or Tilt thus gained remain until the demon assumes demonic form.\n**Failure**: The target is not afflicted.\n**Success**: The demon curses the target, and may impose one Condition or Tilt. Appropriate choices include Madness, Poisoned, Sick, Shunned, and Mute. The demon can also specify and outward sign of Affliction - a disfigurement, an alteration to the target's voice or smell, or any other effect that marks the character.\nThe Affliction remains until the demon removes it. It can generate Beats for the character, but its usual resolution does not apply. The Affliciton can be removed through magical or supernatural means, at the Storyteller's discretion.\n**Exceptional Success**: The demon may add more Conditions or Tilts at a cost of one Aether and one Willpower point each."
+    },
+    {
+      "name": "Hellfire",
+      "desc": "**Example Prerequisites**: Check Backdrop, Merciless Gunman\n**Dice Pool**: Presence + Firearms + Primum\n**Action**: Reflexive\n**Cost**: 1 Aether\n**Dramatic Failure**: The gun explodes, inflicting aggravated damage to the demon (and the gun's wielder, if applicable) equal to the demon's Primum.\n**Failure**: The Exploit does not work and the gun is unaffected.\n**Success**: The gun inflicts aggravated damage for the remainder of the scene. It's other capabilities are unaffected.\n**Exceptional Success**: As above, but the player adds the demon's Primum to the weapon's damage rating."
+    }
+  ],
+  "variations": [
+    {
+      "name": "Carapace",
+      "rating": 1,
+      "desc": "**Universal**\nHas several potential effects based on Magnitude. See p115 of the Deviant core rulebook."
+    },
+    {
+      "name": "Blessing",
+      "rating": 1,
+      "desc": "**Coactive**\nHas several potential effects based on Magnitufe. See p141 of the Deviant core rulebook."
+    }
+  ],
+  "scars": [
+    {
+      "name": "Conspicuous",
+      "rating": 1,
+      "desc": "**Controlled**\nSee p152 of the Deviant core rulebook for effects."
+    },
+    {
+      "name": "Power Build-Up",
+      "rating": 1,
+      "desc": "**Involuntary**\nSee p157 of the Deviant core rulebook for effects."
+    }
+  ],
+  "adaptations": [
+    {
+      "name": "Example Adaptation",
+      "desc": "Add adaptation entries here. Fields: name, desc."
+    }
+  ],
+  "haunts": [
+    {
+      "name": "Example Haunt",
+      "rating": 1,
+      "desc": "Add haunt entries here. Fields: name, rating (1–5), desc."
+    }
+  ],
+  "endowments": [
+    {
+      "name": "Benediction",
+      "rating": 1,
+      "desc": "Each point of Benediction grants access to an additional Virtuous Ritual and adds a die to the ritual dice pool."
+    },
+    {
+      "name": "Castigation: Sense Weakness",
+      "rating": 1,
+      "desc": "Spend 1 Willpower and roll Wits + Empathy vs Finesse. On a success, gain the Informed Condition about the subject. On a failure, learn nothing. On a dramatic failure, gain the Spooked Condition."
+    },
+    {
+      "name": "Elixir",
+      "rating": 1,
+      "desc": "Each dot of Elixir provides access to one additional recipe and adds a die to the Elixir dice pool."
+    }
+  ],
+  "tactics": [
+    {
+      "name": "Identification",
+      "desc": "**Requirements**: Primary actor: Occult 2\n**Action**: Instant and contested: each roll takes an hour, including the primary actor's.\n**Dice Pools**:\n *Primary*: Intelligence + Occult vs Manipulation + Subterfuge + Potency.\n  *Secondary*: Wits + Investigation (collecting evidence, 1/3, or 0/3 if someone tails the target); Wits + Stealth (tailing target 1/1, or 0/1 if someone collects evidence); Wits + Occult (resource, 0/3).\n**Success**: The hunters discern whether the target is an ordinary human, a hunter, or a supernatural creature; if the latter, they learn the type of creature. They also learn one of the following about the target: one Anchor, one Aspiration, the location of their lair or home, or the identity of one character important to her. All participants gain the Informed Condition regarding the target.\n**Exceptional Success**: As success, but players learn two specific pieces of information.\n**Failure an Dramatic Failure**: The target becomes aware of the investigation and takes on group of secondary actors by surprise with an ambush, an automatically successful supernatural power, or a disadvantageous circumstance."
+    },
+    {
+      "name": "Called Shot",
+      "desc": "**Action**: Instant and resisted\n**Dice Pools**:\n  *Primary*: Strength + Weaponry or Dexterity + Firearms - target's Defense.\n  *Secondary*: Manipulation + Persuasion or Subterfuge (baiting, 1/2); Strength + Brawl (tacking, 1/2)\n**Success**: The opponent suffers the appropriate Tilt for a successful hit on the specified target, and the hunter's attack deals damage as normal with a +1 to his weapon modifier. The target takes a penalty to Initiative equal to the number of participants for the rest of the scene.\n**Exceptional Success**: As success, and the Storyteller offers an immediate surrender in exchange for a non-lethal outcome to the scene. If the players accept, the Tactic’s tar- get submits to whatever fate the hunters choose that can be enacted within the current scene, such as capture or giving something up, as long as it doesn’t involve further violence against the target.\n**Failure or Dramatic Failure**: The target twists or ducks at the last minute, and the primary actor makes a reflexive attack against the secondary actor closest to the target, ignoring Defense."
+    }
+  ],
+  "rotes": [
+    {
+      "name": "Kinetic Blow",
+      "rating": 2,
+      "desc": "**Arcana**: Forces 2\n**Primary Factor**: Potency\n**Rote Skill**: Occult\nSubject's unarmed attacks gain a damage bonus equal to Potency (to a maximum of 5) and deal lethal damage.\n**+1 Reach**: spell applies the Knocked Down Tilt.\n**+2 Reach**: spell applies the Stunned Tilt.\n**+1 Reach**: spell affects held weapons.\n**+2 reach**: spell affects thrown weapons or grants Armor Piercing equal to Potency to firearms."
+    },
+    {
+      "name": "Cleanse the Body",
+      "rating": 1,
+      "desc": "**Arcana**: Life 1\n**Primary Factor**: Potency\n**Rote Skill**: Medicine\nGrants bonus equal to Potency to next roll to resist a toxin's effects."
+    },
+    {
+      "name": "Ward and Signs",
+      "rating": 2,
+      "desc": "**Arcana**: Prime 2\n**Primary Factor**: Duration\n**Rote Skill**: Intimidation\nWhen the subject is the target of a spell, that spell is Withstood with the Potency of Wards and Signs."
+    }
+  ],
+  "arcana_attainments": [
+    {
+      "name": "Mage Armor - Forces",
+      "rating": 2,
+      "desc": "Spend 1 Mana to activate. Applies the mage's full Forces rating as general armor, applicable against all damaging physical atacks, fire, and electricity. Has no effect on mental or psychic attacks."
+    },
+    {
+      "name": "Conditional Duration",
+      "rating": 2,
+      "desc": "Spend 1 Mana to add a Conditional Duration to a spell. Doing so adds factors to the spell's duration based on the nature of the condition.\nImprobable: 1\nInfrequent: 2\nCommon: 3"
+    }
+  ],
+  "legacy_attainments": [
+    {
+      "name": "First Attainment",
+      "rating": 1,
+      "desc": "The mage's first Legacy Attainment, unlocked upon joining the Legacy. Record the specific Attainment name and effect here."
+    },
+    {
+      "name": "Second Attainment",
+      "rating": 2,
+      "desc": "The second Legacy Attainment, typically requiring Gnosis 3 or higher. Record the specific Attainment name and effect here."
+    }
+  ],
+  "praxes": [
+    {
+      "name": "Example Praxis",
+      "desc": "Add praxis entries here. Fields: name, desc."
+    }
+  ],
+  "yantras": [
+    {
+      "name": "Dedicated Tool",
+      "desc": "A physical implement dedicated to magical workings through ritual and use. **Dice bonus:** +2. The tool must be relevant to the working or Arcana used."
+    },
+    {
+      "name": "High Speech",
+      "desc": "The ancient language of the Supernal, taught to all Awakened. Speaking aloud in High Speech during casting. **Dice bonus:** +2. Cannot be used silently."
+    },
+    {
+      "name": "Location",
+      "desc": "A place with strong sympathy to the spell's target or symbolism. **Dice bonus:** +1 to +3 depending on strength of the connection. Prepared locations take time to establish."
+    },
+    {
+      "name": "Rune or Diagram",
+      "desc": "A symbolic representation of the spell drawn on a surface or in the air. **Dice bonus:** +2. Takes one minute to draw; destroyed after use unless made permanent."
+    },
+    {
+      "name": "Sacrament",
+      "desc": "A physical object with strong connection to the spell's subject — a lock of hair, a prized possession. **Dice bonus:** +2. Consumed or significantly altered in the working."
+    },
+    {
+      "name": "Symbolic Resonance",
+      "desc": "The time, place, or circumstances of the casting align with the spell's intent (casting a curse at midnight, healing at dawn). **Dice bonus:** +1."
+    },
+    {
+      "name": "Concentration",
+      "desc": "The mage spends a full turn in quiet focus before casting, taking no other actions. **Dice bonus:** +2. Broken by damage, distraction, or combat."
+    }
+  ],
+  "magical_tools": [
+    {
+      "name": "Order Tool",
+      "desc": "The iconic implement of the mage's Order — a Mysterium grimoire, a Silver Ladder sceptre, an Arrow blade. **Benefit:** +1 die to all spells while wielded. Cannot be the same as the dedicated tool."
+    },
+    {
+      "name": "Path Tool",
+      "desc": "A tool aligned to the mage's Path — a Obrimos rod and chalice, an Acanthus wand. **Benefit:** +1 die to Ruling Arcana spells. Distinct from both the dedicated tool and Order tool."
+    },
+    {
+      "name": "Grimoire",
+      "desc": "A bound text containing recorded spells and magical theory. **Benefit:** Studying a grimoire provides a Yantra bonus for a specific spell it contains. Reading time: one hour minimum."
+    },
+    {
+      "name": "Imbued Item",
+      "desc": "An object containing a spell held in ready suspension. **Benefit:** Activating the item releases the stored spell without requiring a casting roll. Activation is an instant action."
+    },
+    {
+      "name": "Artifact",
+      "desc": "A powerful object of Supernal origin, containing a self-sustaining magical effect. **Benefit:** Varies by artifact. Artifacts cannot be created by mages — they are discovered."
+    }
+  ],
+  "utterances": [
+    {
+      "name": "Example Utterance",
+      "rating": 1,
+      "desc": "Add utterance entries here. Fields: name, rating (1–3), desc."
+    }
+  ],
+  "transmutations": [
+    {
+      "name": "Example Transmutation",
+      "desc": "Add transmutation entries here. Fields: name, desc."
+    }
+  ],
+  "disciplines": [
+    {
+      "name": "Celerity",
+      "rating": 1,
+      "desc": "**Cost**: None or 1 Vitae per active effect\n**Dice Pool**: None\n**Action**: None (for persistant effects) or Reflexive (for active effects)\n**Duration**: Permanant (for persistant effects) or one turn (for active effects)\n**Persistant**: Add the vampire's dots in Celerity to her Defense or to her Dodge roll when defending actively. If a firearms attack denies her normal defense, the attacker still takes a penalty to his attack equal to the vampire's dots in Celerity. A character must still be aware of the incoming attacks and able to move to defend against them.\n**Active**: By spending Vitae Celerity can enable one of the following effects (each can only be done once a turn but multiple can be done simultaneously:\n- Move to the head of the Initiative queue\n- Interrupt the action of another character with a brief action of her own (still limited to 1 instant action).\n- Multiply her Speed by dots in Celerity+1"
+    },
+    {
+      "name": "Majesty: Confidant",
+      "rating": 2,
+      "desc": "**Cost**: None\n**Requirement**: The vampire must use Awe on the victim.\n**Dice Pool**: Presence + Empathy + Majesty vs Resolve + Blood Potency\n**Action**: Contested; resistance is reflective\n**Dramatic Failure**: Gain the Swooning Condition for the victim.\n**Failure**: No effect.\n**Success**: Victim gains the Charmed Condition.\n**Exceptional Success**: Victim's Charmed Condition lasts for nights rather than hours."
+    },
+    {
+      "name": "Protean: Beast's Skin",
+      "rating": 3,
+      "desc": "**Cost**: 2 Vitae\n**Dice Pool**: None\nAction: Instant\n**Duration**: Infinite\nTake the form of an animal the vampire has consumed. Can only take the form of predatory animals, carrion-eaters, plague-carrying beasts, and parasites between Size 1 and 7. A vampire can have a number of forms at the ready equal to her dots in Protean; to add or replace one she must consume the appropriate beast then slumber for a full day and night in her Unmarked Grave. In animal form she takes on the beast't Physical Attributes, Skills, Size, Speed, and Health. She can move, sense, and attack in any way the animal can. She may be unable to use some Physical Merits at the Storyteller's discretion. She can remain in her animal form indefinitely but still needs to consume blood and will be harmed by sunlight. The vampire can use her Disciplines in animal form. "
+    }
+  ],
+  "devotions": [
+    {
+      "name": "Body of Will",
+      "rating": 0,
+      "desc": "**Requirements**: Resiliance 3, Vigor 1\n**Cost**: 1 Vitae\nDice Pool: Stamina + Survival + Resiliance\n**Action**: Reflexive\nFor one turn per success, the character suffers no wound penalties. As well, during any turn where he takes damage, he does not need to spend Vitae to activate one effect of Vigor. This Devotion costs 2 Experiences to learn."
+    }
+  ],
+  "vampire_rites": [
+    {
+      "name": "Rigor Mortis",
+      "rating": 1,
+      "desc": "**Target number of successes**: 5\n**Resisted**: Composure\nThe victim, who must be a vampire within a mile of the ritual, suffers the loss of the reanimating power of Vitae. His next physical action is penalized by -3."
+    }
+  ],
+  "gifts": [
+    {
+      "name": "Shadow Gaze",
+      "rating": 1,
+      "desc": "**Moon Gift**\n**Cost**: 1 Essence\n**Duration**: 1 Scene\n**Dice Pool**: Wits + Occult + Wisdom vs Resistance\n**Action**: Instant, may be Contested\nAdd Wisdom Renown to all Emphathy rolls made when interacting with spirits and the Ridden. Can also be used to directly to any spirit you can perceive, revealing symbolic truths. Second and subsequent uses cost 1 Essence each.\n**Dramatic Failure**: Unable to read the spirit and the spirit becomes aware of the attempt.\n**Failure**: Unable to read spirit.\n**Success**: Learn the spirit's ban or bane.\n**Exceptional Success**: Learn both the spirit's ban and bane."
+    },
+    {
+      "name": "Cold Embrace",
+      "rating": 1,
+      "desc": "**Gift of Death**\n**Cost**: 1 Essence\n**Duration**: 1 hour per success\n**Dice Pool**: Stamina + Medicine + Cunning\n**Action**: Instant\n**Dramatic Failure**: Suffer 1 aggravated damage\n**Failure**: Fail to still body's vital signs\n**Succcess**: Still body's vital signs. Appear to be freshly dead, displaying no pulse or respiration, and ceasing natural regeneration. Can still act under this effect with a penalty of 5 - Cunning Renown, appearing as an undead creature.\n**Exceptional Success**: Reduce all damage suffered by 1."
+    }
+  ],
+  "rites": [
+    {
+      "name": "Chain Rage",
+      "rating": 1,
+      "desc": "**Wolf Rite**\n**Symbols**: Rage, calm, binding, dawn\n**Sample Rite**: Certain northerly Scandinavian packs work themselves into a frothing fury udner the light of the new day's sun, scream their anger into etched jars and rend their own flesh until exhausted. Then they hurl themselves into frigid water. (Stamina + Survival).\n**Action**: Extended (10 successes, each roll represents 1 minute\nDuration: 1 month\n**Success**: Ritual affects all Uratha who take part. It binds a container or focus to each participant, such as a bottle or piece of chain. As long as the Uratha keeps the focus about her person, then achieving five turns of lucidity during a period of Wasu-Im (not continuous) immediately ends the rage. At the end of the month, or should the focus be broken or taken, the Uratha immediately enters Wasu-Im."
+    }
+  ],
+  "tells": [
+    {
+      "name": "Example Tell",
+      "desc": "Add tell entries here. Fields: name, desc."
+    }
+  ],
+  "numina": [
+    {
+      "name": "Mortal Mask",
+      "desc": "Disguises the Materialized entity as human. Costs 1 Essence and lasts for activation sucesses in hours. Witnesses can see through the disguise with a Wits + Composure - Entity's Finesse roll. Characters able to sense the entity in Twilight do not suffer the penalty."
+    },
+    {
+      "name": "Innocuous",
+      "desc": "This Numen does not require a roll to activate. Percpetion rolls to notice the entity are penalized by two dice."
+    },
+    {
+      "name": "Blast",
+      "desc": "Range is equal to 10 yards per dot of Power. If activation roll succeeds, the Blast wounds a lethal weapon. The entity may pay 2 Essence to increase the weapon damage by one lethal damage up to a maximum of the entity's Rank."
+    }
+  ],
+  "manifestations": [
+    {
+      "name": "Example Manifestation",
+      "desc": "Add manifestation entries here. Fields: name, desc."
+    }
+  ],
+  "influences": [
+    {
+      "name": "Animals",
+      "desc": "Wild beasts and their primal drives.",
+      "rating": 1
+    },
+    {
+      "name": "Blood",
+      "desc": "Life force, wounds, lineage, and sacrifice.",
+      "rating": 1
+    },
+    {
+      "name": "Electricity",
+      "desc": "Lightning, electrical systems, and the power grid.",
+      "rating": 1
+    }
+  ],
+  "dread_powers": [
+    {
+      "name": "Example Dread Power",
+      "desc": "Add dread power entries here. Fields: name, desc."
+    }
+  ]
+}

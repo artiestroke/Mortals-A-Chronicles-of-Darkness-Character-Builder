@@ -191,6 +191,7 @@
         <option value="neutral">Neutral</option>
         <option value="mortal">Mortal</option>
         <option value="hunter">Hunter</option>
+        <option value="princess">Princess</option>
         <option value="mage">Mage</option>
         <option value="ascension">Mage (Ascension)</option>
         <option value="werewolf">Werewolf</option>
@@ -265,12 +266,6 @@
       <input type="file" id="importSheetFile" accept=".json" style="display:none" onchange="importSheet(this)">
       <div id="sheetImportResult" class="import-result"></div>
       <div class="hint">Export saves the current sheet as JSON. Import loads a sheet file.</div>
-      <div class="io-row">
-        <button onclick="shareSheetURL()">&#128279; Share sheet URL</button>
-        <button onclick="loadSheetURL()">&#8613; Load sheet URL</button>
-      </div>
-      <div id="shareUrlResult" class="import-result"></div>
-      <div class="hint">Share generates a URL containing the full sheet. Load reads a share URL.</div>
       <div class="io-row fss-row">
         <button id="fssCharsBtn" onclick="fssConnectChars()">📁 Connect characters folder</button>
       </div>
@@ -347,6 +342,7 @@
             <option value="mortal">Mortal</option>
             <option value="hunter">Hunter</option>
             <option value="mage">Mage</option>
+            <option value="princess">Princess</option>
             <option value="ascension">Mage (Ascension)</option>
             <option value="werewolf">Werewolf</option>
             <option value="vampire">Vampire</option>
@@ -389,7 +385,7 @@
         </div>
         <div id="drawerWatermarkOpacityRow" class="cfg-preset-row" style="display:none;align-items:center;gap:6px;flex-wrap:nowrap">
           <label style="flex-shrink:0">Watermark Opacity</label>
-          <input type="range" id="drawerWatermarkOpacitySlider" min="0.02" max="0.06" step="0.005"
+          <input type="range" id="drawerWatermarkOpacitySlider" min="0.02" max="0.90" step="0.005"
             style="flex:1;min-width:0;accent-color:var(--accent)"
             oninput="applyWatermarkOpacity(+this.value)">
           <span id="drawerWatermarkOpacityVal" style="font-family:sans-serif;font-size:.75rem;color:var(--muted);min-width:32px;text-align:right"></span>
@@ -420,11 +416,6 @@
           </div>
           <input type="file" id="importSheetFileDrawer" accept=".json" style="display:none" onchange="importSheet(this)">
           <div class="hint">Export saves the current sheet as JSON. Import loads a sheet file.</div>
-          <div class="io-row">
-            <button onclick="shareSheetURL()">&#128279; Share sheet URL</button>
-            <button onclick="loadSheetURL()">&#8613; Load sheet URL</button>
-          </div>
-          <div class="hint">Share generates a URL containing the full sheet. Load reads a share URL.</div>
           <div class="io-row fss-row">
             <button id="fssCharsBtnDrawer" onclick="fssConnectChars()">📁 Connect characters folder</button>
           </div>
@@ -454,7 +445,6 @@
   </div><!-- /.drawer-panel -->
 </div><!-- /.drawer-backdrop -->
 
-<script src="https://cdn.jsdelivr.net/npm/lz-string@1.5.0/libs/lz-string.min.js"></script>
 <script src="app.js?split=1"></script>
 
 <!-- ── Help modal ────────────────────────────────────────────────────────── -->

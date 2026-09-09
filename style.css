@@ -48,6 +48,25 @@
   --green:#1a6b3a;--green-bg:#edf7f1;
 }
 
+/* Princess — magenta/lavender, matching the Princess: the Hopeful (Crystal Edition) sheet.  */
+/* Key accent sampled: #284880 (navy blue), blue-grey tones throughout. (IGNORE)      */
+[data-theme="princess"]{
+  --bg:#787194;
+  --surface:#cbc3e0;
+  --border:#482340;
+  --border-light:#391f2f;
+  --text:#2b0e29;
+  --muted:#7e71b9;
+  --faint:#782c65;
+  --accent:#4b327d;
+  --accent-hover:#511b45;
+  --chip:#a296d4;
+  --tag:#e8d8e2;
+  --danger:#c0392b;--danger-bg:#fdf2f1;
+  --info:#1a5fa8;--info-bg:#eef4fb;
+  --green:#1a6b3a;--green-bg:#edf7f1;
+}
+
 /* Hunter — deep forest green, matching the Hunter: the Vigil 2e sheet.       */
 /* Key accent sampled: #103020 (deep forest green), desaturated teal bg wash. */
 [data-theme="hunter"]{
@@ -510,10 +529,9 @@ button.sm{font-size:.75rem;padding:.25rem .6rem}
 .quinpar-ctrl-lbl{font-size:.6rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
 .quinpar-ctrl-row{display:flex;align-items:center;gap:5px}
 .quinpar-val{font-size:1.1rem;font-weight:700;min-width:20px;text-align:center}
-.quinpar-svg-hidden{display:none!important}
 /* Print: hide +/- controls; render SVG squares as empty outlines so the      */
 /* wheel can be filled in pencil. Paradox/Quintessence values zero out.       */
-@media print{.quinpar-controls{display:none!important}.quinpar-svg rect{fill:transparent!important;stroke:var(--border)!important}.quinpar-svg line{display:none!important}.quinpar-svg-hidden{display:block!important}.quinpar-svg-hidden .quinpar-lbl-top,.quinpar-svg-hidden .quinpar-lbl-btm{display:none!important}}
+@media print{.quinpar-controls{display:none!important}.quinpar-svg rect{fill:transparent!important;stroke:var(--border)!important}.quinpar-svg line{display:none!important}}
 .rsquare{width:100%;aspect-ratio:1;border:1.5px solid var(--border);border-radius:2px;cursor:pointer;background:var(--surface);transition:background .1s}
 .rsquare:hover{border-color:var(--muted)}
 .rsquare.on{background:var(--text);border-color:var(--text)}
